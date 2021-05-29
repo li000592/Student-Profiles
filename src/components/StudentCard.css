@@ -50,6 +50,15 @@
   width: 30px;
   border-radius: 50%;
   margin: 16px;
+
+  opacity: 0.8;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+.toggle-buttons:hover {
+  opacity: 1;
 }
 .button-contianer {
   display: flex;
