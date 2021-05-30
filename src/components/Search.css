@@ -1,7 +1,8 @@
 .search-container {
   margin-top: 24px;
-  height: 7rem;
+  height: 9rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: gray;
@@ -26,6 +27,7 @@
   padding: 10px;
   text-align: left;
   border: none;
+  margin: 16px;
 }
 
 .searchIcon {

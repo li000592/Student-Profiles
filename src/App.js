@@ -7,28 +7,44 @@ import { getStudentsList } from "./services/studentServices"
 function App() {
   const [studentData, setStudentData] = useState(null)
   const [searchData, setSearchData] = useState(null)
-  const [query, setQuery] = useState(null)
+  const [nameQuery, setNameQuery] = useState(null)
+  const [tagQuery, setTagQuery] = useState(null)
+
   React.useEffect(() => {
     getStudentsList().then((response) => setStudentData(response.students))
   }, [])
   React.useEffect(() => {
     if (studentData) setSearchData(studentData)
-    if (query && query.length > 0) {
+    if (tagQuery && tagQuery.length > 0 && nameQuery && nameQuery.length > 0) {
       setSearchData(
         studentData.filter(
-          (item) => item.firstName.toLowerCase().includes(query) || item.lastName.toLowerCase().includes(query)
+          (item) =>
+            (item.firstName.toLowerCase().includes(nameQuery) || item.lastName.toLowerCase().includes(nameQuery)) &&
+            item?.tags?.toString().includes(tagQuery)
         )
       )
+    } else if (nameQuery && nameQuery.length > 0) {
+      setSearchData(
+        studentData.filter(
+          (item) => item.firstName.toLowerCase().includes(nameQuery) || item.lastName.toLowerCase().includes(nameQuery)
+        )
+      )
+    } else if (tagQuery && tagQuery.length > 0) {
+      setSearchData(
+        studentData.filter((item) => {
+          return item?.tags?.toString().includes(tagQuery)
+        })
+      )
     }
-  }, [query, studentData])
-  if (!searchData) return <div>Loading..</div>
-  console.log("query", query)
+  }, [nameQuery, studentData, tagQuery])
   console.log(searchData)
+  if (!searchData) return <div>Loading..</div>
+
   return (
     <div className='App'>
-      <Search setQuery={setQuery} />
+      <Search setNameQuery={setNameQuery} setTagQuery={setTagQuery} />
       {searchData.map((student) => (
-        <StudentCard data={student} key={student.id} />
+        <StudentCard data={student} key={student.id} setStudentData={setStudentData} />
       ))}
     </div>
   )

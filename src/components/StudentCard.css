@@ -63,3 +63,24 @@
 .button-contianer {
   display: flex;
 }
+
+.tags-container {
+  display: flex;
+  flex-direction: row;
+}
+.tags-container p {
+  background-color: #c0c0c1;
+  padding: 4px 8px 4px 8px;
+  margin: 0px 4px 16px 0px;
+  border-radius: 8px;
+}
+.student-card input {
+  margin-bottom: 16px;
+  border-width: 0px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+textarea:focus,
+.student-card input:focus {
+  outline: none;
+}
