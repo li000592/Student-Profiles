@@ -43,7 +43,7 @@ export default function StudentCard({ data, setStudentData }) {
         <img src={data.pic} alt='student-avatar' className='student-avatar' />
         <div className='main-contents'>
           <h1>
-            {data.firstName} {data.lastName}
+            {data.firstName.toUpperCase()} {data.lastName.toUpperCase()}
           </h1>
           <p>Email: {data.email}</p>
           <p>Company: {data.company}</p>
@@ -56,8 +56,8 @@ export default function StudentCard({ data, setStudentData }) {
             <div>
               {data.grades.map((grades, index) => (
                 <p key={index}>
-                  Test{index + 1}: {"  "}
-                  {grades}
+                  Test {index + 1}:<span> </span>
+                  {grades}%
                 </p>
               ))}
             </div>
@@ -66,7 +66,7 @@ export default function StudentCard({ data, setStudentData }) {
         </div>
       </div>
       <div className='button-container'>
-        <button className='toggle-buttons' onClick={toggleButtonHandler}>
+        <button className={`toggle-buttons ${isExpand ? "button-minus" : "button-plus"}`} onClick={toggleButtonHandler}>
           {isExpand ? "-" : "+"}
         </button>
       </div>

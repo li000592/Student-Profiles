@@ -36,13 +36,12 @@
 .toggle-buttons {
   border: none;
   color: black;
-  font-size: 64px;
-  font-weight: 3000;
+  font-size: 80px;
   background-color: white;
   margin: 16px;
   opacity: 0.5;
-  transition: 0.3s;
   text-align: center;
+  user-select: none;
 }
 .toggle-buttons:hover {
   opacity: 1;
@@ -50,7 +49,9 @@
 .button-contianer {
   display: flex;
 }
-
+.toggle-buttons.button-minus {
+  margin-top: 11px;
+}
 .tags-container {
   display: flex;
   flex-direction: row;
@@ -82,4 +83,7 @@ textarea:focus,
 .main-contents {
   display: flex;
   flex-direction: column;
+}
+.main-contents h1 {
+  margin-bottom: 8px;
 }
