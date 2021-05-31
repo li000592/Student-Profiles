@@ -1,0 +1,12 @@
+.student-profile-view-container {
+}
+
+.student-profile-list {
+  background-color: white;
+  height: 600px;
+  width: 900px;
+  overflow-y: auto;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.2);
+}
