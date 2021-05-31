@@ -78,9 +78,10 @@
   margin-bottom: 16px;
   border-width: 0px;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(152, 149, 149);
 }
 textarea:focus,
 .student-card input:focus {
   outline: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
 }
