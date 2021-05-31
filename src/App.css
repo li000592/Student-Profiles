@@ -4,11 +4,12 @@
   font-family: "Raleway", sans-serif;
 }
 body {
-  background-color: antiquewhite;
+  background-color: rgb(240, 240, 240);
 }
 .App {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
